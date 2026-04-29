@@ -50,12 +50,7 @@
   color: var(--diff-changed-text);
 }
 
-.summary-chip-symbol {
-  opacity: 0.7;
-}
-
 .summary-chip-label {
   font-weight: 400;
   margin-inline-start: 2px;
-  opacity: 0.75;
 }
