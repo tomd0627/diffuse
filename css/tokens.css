@@ -20,7 +20,7 @@
   --diff-changed-text: #fbbf24;
   --diff-removed-bg: rgb(239 68 68 / 10%);
   --diff-removed-text: #f87171;
-  --diff-unchanged: #555570;
+  --diff-unchanged: #7d7dac;
 
   /* Fonts */
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
@@ -48,7 +48,7 @@
   --space-8: 2rem;
 
   /* Text */
-  --text-muted: #666685;
+  --text-muted: #88a;
   --text-primary: #e4e4f4;
   --text-secondary: #a0a0c0;
 
