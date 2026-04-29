@@ -1,0 +1,61 @@
+.summary-bar {
+  align-items: center;
+  background-color: var(--bg-surface);
+  border-block-end: 1px solid var(--border-subtle);
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: space-between;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+}
+
+.summary-counts {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.summary-placeholder {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.summary-chip {
+  align-items: center;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  gap: var(--space-1);
+  padding-block: 2px;
+  padding-inline: var(--space-2);
+}
+
+.summary-chip--added {
+  background-color: var(--diff-added-bg);
+  color: var(--diff-added-text);
+}
+
+.summary-chip--removed {
+  background-color: var(--diff-removed-bg);
+  color: var(--diff-removed-text);
+}
+
+.summary-chip--changed {
+  background-color: var(--diff-changed-bg);
+  color: var(--diff-changed-text);
+}
+
+.summary-chip-symbol {
+  opacity: 0.7;
+}
+
+.summary-chip-label {
+  font-weight: 400;
+  margin-inline-start: 2px;
+  opacity: 0.75;
+}

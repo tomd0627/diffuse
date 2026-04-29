@@ -1,0 +1,266 @@
+.panel--output {
+  background-color: var(--bg-surface);
+}
+
+.diff-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-block-size: 0;
+  overflow: hidden;
+}
+
+/* Scrollable diff area */
+.diff-scroller {
+  flex: 1;
+  min-block-size: 0;
+  overflow: auto;
+  padding-block: var(--space-4);
+}
+
+/* ── Empty state ── */
+.diff-empty {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  justify-content: center;
+  min-block-size: 260px;
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.diff-empty-icon {
+  color: var(--border);
+}
+
+.diff-empty-title {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.diff-empty-body {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  max-inline-size: 30ch;
+}
+
+/* ── Error state ── */
+.diff-error {
+  align-items: flex-start;
+  background-color: var(--diff-removed-bg);
+  border: 1px solid rgb(239 68 68 / 20%);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: var(--space-3);
+  margin-block: var(--space-4);
+  margin-inline: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+}
+
+.diff-error-icon {
+  color: var(--diff-removed-text);
+  flex-shrink: 0;
+  margin-block-start: 1px;
+}
+
+.diff-error-text {
+  flex: 1;
+}
+
+.diff-error-title {
+  color: var(--diff-removed-text);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-block-end: var(--space-1);
+}
+
+.diff-error-message {
+  color: var(--diff-removed-text);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  opacity: 0.8;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+/* ── No changes state ── */
+.diff-clean {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  justify-content: center;
+  min-block-size: 200px;
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.diff-clean-icon {
+  color: var(--diff-added-text);
+}
+
+.diff-clean-title {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.diff-clean-body {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* ── Rule blocks ── */
+.diff-rule {
+  margin-block-end: var(--space-6);
+  padding-inline: var(--space-4);
+}
+
+.diff-rule-selector {
+  color: var(--text-secondary);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-block-end: var(--space-1);
+  padding-block: 2px;
+}
+
+.diff-rule-selector--added {
+  color: var(--diff-added-text);
+}
+
+.diff-rule-selector--removed {
+  color: var(--diff-removed-text);
+}
+
+.diff-rule-open {
+  color: var(--diff-unchanged);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+.diff-rule-body {
+  border-inline-start: 2px solid var(--border-subtle);
+  margin-block-end: var(--space-1);
+  padding-inline-start: var(--space-4);
+}
+
+.diff-rule-close {
+  color: var(--diff-unchanged);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+/* ── Diff lines ── */
+.diff-line {
+  align-items: baseline;
+  border-radius: 2px;
+  display: flex;
+  gap: var(--space-2);
+  padding-block: 1px;
+  padding-inline: var(--space-1);
+}
+
+.diff-line-prefix {
+  color: inherit;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  inline-size: 1ch;
+  opacity: 0.7;
+  text-align: start;
+  user-select: none;
+}
+
+.diff-line-content {
+  color: inherit;
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+/* Line type variants */
+.diff-line--added {
+  background-color: var(--diff-added-bg);
+  color: var(--diff-added-text);
+}
+
+.diff-line--removed {
+  background-color: var(--diff-removed-bg);
+  color: var(--diff-removed-text);
+}
+
+.diff-line--changed {
+  background-color: var(--diff-changed-bg);
+  color: var(--diff-changed-text);
+}
+
+.diff-line--unchanged {
+  color: var(--diff-unchanged);
+}
+
+/* Changed value display: old → new */
+.diff-change-old {
+  opacity: 0.65;
+  text-decoration: line-through;
+  text-decoration-color: var(--diff-removed-text);
+}
+
+.diff-change-arrow {
+  margin-inline: var(--space-1);
+  opacity: 0.5;
+}
+
+.diff-at-rule-hint {
+  font-style: italic;
+  opacity: 0.65;
+}
+
+/* ── Copy button ── */
+.btn-copy {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  display: flex;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  gap: var(--space-1);
+  padding-block: var(--space-1);
+  padding-inline: var(--space-2);
+  transition: all var(--transition-fast);
+}
+
+.btn-copy:hover {
+  background-color: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.btn-copy--success {
+  border-color: var(--diff-added-text);
+  color: var(--diff-added-text);
+}
+
+.btn-copy--error {
+  border-color: var(--diff-removed-text);
+  color: var(--diff-removed-text);
+}
+
+/* Mobile: let diff area be auto height */
+@media (max-width: 1024px) {
+  .diff-container {
+    min-block-size: 300px;
+  }
+
+  .diff-scroller {
+    min-block-size: 300px;
+  }
+}

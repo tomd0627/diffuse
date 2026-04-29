@@ -1,0 +1,119 @@
+/* Utility */
+.sr-only {
+  block-size: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  inline-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* Base */
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  block-size: 5px;
+  inline-size: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-xl);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Focus */
+:focus-visible {
+  border-radius: var(--radius-sm);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* App structure — full-height on desktop */
+.app-wrapper {
+  block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-main {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 1fr 1.3fr;
+  min-block-size: 0;
+  overflow: hidden;
+}
+
+/* Panel base */
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 0;
+  overflow: hidden;
+}
+
+.panel--before,
+.panel--after {
+  border-inline-end: 1px solid var(--border-subtle);
+}
+
+/* Tablet: ≤ 1024px — inputs side-by-side, output full-width below */
+@media (max-width: 1024px) {
+  .app-wrapper {
+    block-size: auto;
+    overflow: visible;
+  }
+
+  .app-main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    min-block-size: auto;
+    overflow: visible;
+  }
+
+  .panel--before,
+  .panel--after {
+    border-inline-end: none;
+  }
+
+  .panel--after {
+    border-inline-start: 1px solid var(--border-subtle);
+  }
+
+  .panel--output {
+    border-block-start: 1px solid var(--border-subtle);
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile: ≤ 640px — single column stack */
+@media (max-width: 640px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+
+  .panel--after {
+    border-block-start: 1px solid var(--border-subtle);
+    border-inline-start: none;
+  }
+
+  .panel--output {
+    grid-column: auto;
+  }
+}

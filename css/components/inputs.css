@@ -1,0 +1,98 @@
+.panel-header {
+  align-items: center;
+  background-color: var(--bg-surface);
+  border-block-end: 1px solid var(--border-subtle);
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+}
+
+.panel-header-start {
+  align-items: center;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.panel-dot {
+  block-size: 7px;
+  border-radius: var(--radius-xl);
+  flex-shrink: 0;
+  inline-size: 7px;
+}
+
+.panel-dot--before {
+  background-color: var(--diff-removed-text);
+}
+
+.panel-dot--after {
+  background-color: var(--diff-added-text);
+}
+
+.panel-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panel-label--before {
+  color: var(--diff-removed-text);
+}
+
+.panel-label--after {
+  color: var(--diff-added-text);
+}
+
+.panel-hint {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.css-editor {
+  background-color: var(--bg-panel);
+  border: none;
+  caret-color: var(--accent);
+  color: var(--text-primary);
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+  min-block-size: 0;
+  outline: none;
+  overflow: auto;
+  padding: var(--space-4);
+  tab-size: 2;
+  white-space: pre;
+}
+
+.css-editor::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.css-editor:focus {
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+/* Mobile: fixed height so textareas don't collapse */
+@media (max-width: 1024px) {
+  .css-editor {
+    block-size: 280px;
+    flex: none;
+    min-block-size: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .css-editor {
+    block-size: 220px;
+    min-block-size: 220px;
+  }
+
+  .panel-hint {
+    display: none;
+  }
+}
